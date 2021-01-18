@@ -1,0 +1,58 @@
+# Project: IP1_project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -std=c11
+CC       = gcc.exe -std=c11
+WINDRES  = windres.exe
+OBJ      = code/main.o code/game.o code/scene_menu.o code/scene_settings.o code/scene_story.o code/shared.o code/utility.o code/scene_practice.o code/scene_choose.o code/scene_12p.o code/scene_medal.o
+LINKOBJ  = code/main.o code/game.o code/scene_menu.o code/scene_settings.o code/scene_story.o code/shared.o code/utility.o code/scene_practice.o code/scene_choose.o code/scene_12p.o code/scene_medal.o
+LIBS     = -L"C:/Users/lin01/Downloads/DevCppPortable/MinGW64/lib" -L"C:/Users/lin01/Downloads/DevCppPortable/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -L"C:/allegro-mingw-gcc6.2.0-x64-static-5.2.2/allegro/lib/" C:/allegro-mingw-gcc6.2.0-x64-static-5.2.2/allegro/lib/liballegro_monolith.dll.a
+INCS     = -I"C:/Users/lin01/Downloads/DevCppPortable/MinGW64/include" -I"C:/Users/lin01/Downloads/DevCppPortable/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/lin01/Downloads/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/allegro-mingw-gcc6.2.0-x64-static-5.2.2/allegro/include/"
+CXXINCS  = -I"C:/Users/lin01/Downloads/DevCppPortable/MinGW64/include" -I"C:/Users/lin01/Downloads/DevCppPortable/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/lin01/Downloads/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/lin01/Downloads/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/allegro-mingw-gcc6.2.0-x64-static-5.2.2/allegro/include/"
+BIN      = IP1_project1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+code/main.o: code/main.c
+	$(CC) -c code/main.c -o code/main.o $(CFLAGS)
+
+code/game.o: code/game.c
+	$(CC) -c code/game.c -o code/game.o $(CFLAGS)
+
+code/scene_menu.o: code/scene_menu.c
+	$(CC) -c code/scene_menu.c -o code/scene_menu.o $(CFLAGS)
+
+code/scene_settings.o: code/scene_settings.c
+	$(CC) -c code/scene_settings.c -o code/scene_settings.o $(CFLAGS)
+
+code/scene_story.o: code/scene_story.c
+	$(CC) -c code/scene_story.c -o code/scene_story.o $(CFLAGS)
+
+code/shared.o: code/shared.c
+	$(CC) -c code/shared.c -o code/shared.o $(CFLAGS)
+
+code/utility.o: code/utility.c
+	$(CC) -c code/utility.c -o code/utility.o $(CFLAGS)
+
+code/scene_practice.o: code/scene_practice.c
+	$(CC) -c code/scene_practice.c -o code/scene_practice.o $(CFLAGS)
+
+code/scene_choose.o: code/scene_choose.c
+	$(CC) -c code/scene_choose.c -o code/scene_choose.o $(CFLAGS)
+
+code/scene_12p.o: code/scene_12p.c
+	$(CC) -c code/scene_12p.c -o code/scene_12p.o $(CFLAGS)
+
+code/scene_medal.o: code/scene_medal.c
+	$(CC) -c code/scene_medal.c -o code/scene_medal.o $(CFLAGS)
